@@ -74,6 +74,7 @@ define(["./SimpleLogger","./SimpleLogLevels"],
    * objects for custom categories, then invoke the various methods available on the
    * loggers to produce log messages to be handled by the configured appenders.
    *
+   * @exports SimpleLoggerProvider
    * @extends LoggerProvider
    */
   var SimpleLoggerProvider = function() { ////extend EventDispatcher?
@@ -167,7 +168,7 @@ define(["./SimpleLogger","./SimpleLogLevels"],
      * @param {SimpleLogAppender} logAppender An instance of SimpleLogAppender that was previously 
      * added to this SimpleLoggerProvider instance.
      * 
-     * @see #addLoggerAppender
+     * @see addLoggerAppender
      */
     removeLoggerAppender: function(logAppender) {
       for (var i=0; i<this._appenders.length; i++) {
