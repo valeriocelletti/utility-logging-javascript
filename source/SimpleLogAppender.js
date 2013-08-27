@@ -20,8 +20,8 @@ define(["./SimpleLogLevels"], function(SimpleLogLevels) {
    * @constructor
    * 
    * @param {String} [level] The threshold level at which the SimpleLogAppender is created.
-   * It should be one of "DEBUG", "INFO", "WARN", "ERROR" and "FATAL". if not
-   * specified INFO is assumed
+   * It should be one of "DEBUG", "INFO", "WARN", "ERROR" and "FATAL". If not
+   * or wrongly specified INFO is assumed.
    * @param {String} [category] The category this appender should listen to.
    * If not specified the appender will get log for every available category.
    * 
@@ -39,7 +39,7 @@ define(["./SimpleLogLevels"], function(SimpleLogLevels) {
     /**
      * @private
      */
-    this.myLevel = level || "INFO";
+    this.myLevel = SimpleLogLevels.piority(level) ? level : "INFO";
     
     /**
      * @private
@@ -69,12 +69,13 @@ define(["./SimpleLogLevels"], function(SimpleLogLevels) {
      * This implementation is empty. 
      * This is the method that is supposedly written by subclasses to publish log messages
      * 
-     * @param {String} category The logger category that produced the given message.
-     * @param {String} level The logging level of the given message. It should be one of DEBUG INFO WARN ERROR FATAL.
-     * @param mex The message to be logged. It could be a String instance, an Error instance or any other
+     * @param {String} category the logger category that produced the given message.
+     * @param {String} level the logging level of the given message. It should be one of DEBUG INFO WARN ERROR FATAL.
+     * @param {String} mex the message to be logged. It could be a String instance, an Error instance or any other
      * object, provided that it has a toString method.
+     * @param {String} header a header for the message
      */
-    log: function(category, level, mex) {
+    log: function(category, level, mex, header) {
       
     },
     
@@ -90,16 +91,6 @@ define(["./SimpleLogLevels"], function(SimpleLogLevels) {
      */
     composeLine: function(category, level, mex, header) {
       return category + " | " + level + " | " + header + " | " + mex;
-    },
-    
-    /**
-     * Indicates whether the given log level is a "WARN" or higher priority message or not.
-     * @protected
-     * @param {String} level the level of a log message
-     * @return true if WARN, ERROR or FATAL is specified; false otherwise.
-     */
-    isHighLevel: function(level) {
-      return (  SimpleLogLevels.priority(level) >= SimpleLogLevels.priority("WARN"));
     },
      
     /**
@@ -162,7 +153,6 @@ define(["./SimpleLogLevels"], function(SimpleLogLevels) {
   SimpleLogAppender.prototype["log"] = SimpleLogAppender.prototype.log;
   SimpleLogAppender.prototype["setLoggerProvider"] = SimpleLogAppender.prototype.setLoggerProvider;
   SimpleLogAppender.prototype["composeLine"] = SimpleLogAppender.prototype.composeLine;
-  SimpleLogAppender.prototype["isHighLevel"] = SimpleLogAppender.prototype.isHighLevel;
   SimpleLogAppender.prototype["getLevel"] = SimpleLogAppender.prototype.getLevel;
   SimpleLogAppender.prototype["setLevel"] = SimpleLogAppender.prototype.setLevel;
   SimpleLogAppender.prototype["getCategoryFilter"] = SimpleLogAppender.prototype.getCategoryFilter;
