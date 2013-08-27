@@ -1,3 +1,18 @@
+/*
+  Copyright 2013 Weswit Srl
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*/
 define(["Inheritance","./SimpleLogAppender"], 
     function(Inheritance,SimpleLogAppender) {
 
@@ -13,7 +28,8 @@ define(["Inheritance","./SimpleLogAppender"],
    * If not specified the appender will get log for every available category.
    * See {@link SimpleLogAppender#setCategoryFilter}.
    * @param {Function} functionToCall a well defined function to call passing log messages.
-   * The function will be invoked with a single String argument.
+   * The function will be invoked with a single String argument. If a more detailed insight
+   * on the message details is required it is suggested to implement a custom SimpleLogAppender. 
    * @param {Object} [objectToApplyTo] an instance of object to apply the functionToCall to.
    * 
    * @exports FunctionAppender
