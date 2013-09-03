@@ -13,9 +13,10 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 */
-define(["Inheritance","./SimpleLogAppender","./BufferAppender","Executor","Environment","IllegalArgumentException"],
-    function(Inheritance,SimpleLogAppender,BufferAppender,Executor,Environment,IllegalArgumentException) {
+define(["Inheritance","./SimpleLogAppender","./BufferAppender","Executor","Environment"],
+    function(Inheritance,SimpleLogAppender,BufferAppender,Executor,Environment) {
 
+  
   Environment.browserDocumentOrDie();
   
   /**
