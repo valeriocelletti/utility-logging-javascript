@@ -7,6 +7,10 @@
     closure: {
         CompilationLevel: 'ADVANCED_OPTIMIZATIONS',
         loggingLevel: 'SEVERE',
+        externs: [
+          "externs.js"
+        ],
+        ignoreDefaultExterns: false,
         avoidGlobals: true
     },
 
