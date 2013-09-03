@@ -14,7 +14,7 @@
   limitations under the License.
 */
 define(["Inheritance","./SimpleLogAppender","IllegalArgumentException","Environment"], 
-    function(Inheritance,SimpleLogAppender,IllegalArgumentException) {
+    function(Inheritance,SimpleLogAppender,IllegalArgumentException,Environment) {
 
   Environment.browserDocumentOrDie();
     
