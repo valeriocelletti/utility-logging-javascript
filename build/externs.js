@@ -1,7 +1,6 @@
 Environment = {};
 Environment.browserDocumentOrDie = function() {};
 
-
 Executor = {};
 Executor.addTimedTask = function() {};
 
