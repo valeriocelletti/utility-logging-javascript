@@ -23,6 +23,8 @@
         "Helpers": "empty:"        
     },
     
+    removeCombined: true,
+    
     modules: [
       {
         name: "utility-logging",
