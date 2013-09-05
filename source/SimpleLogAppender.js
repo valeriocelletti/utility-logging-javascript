@@ -39,7 +39,7 @@ define(["./SimpleLogLevels"], function(SimpleLogLevels) {
     /**
      * @private
      */
-    this.myLevel = SimpleLogLevels.piority(level) ? level : "INFO";
+    this.myLevel = SimpleLogLevels.priority(level) ? level : "INFO";
     
     /**
      * @private
