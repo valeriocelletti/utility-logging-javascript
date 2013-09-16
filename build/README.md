@@ -32,4 +32,4 @@ Assuming you have the jsdoc folder in your path call
 ```
 jsdoc --destination ../docs ../source
 ```
-Documentation will appear in the docs folder.
+Documentation will appear in the docs folder..
