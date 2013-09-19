@@ -8,7 +8,7 @@ require({
         CompilationLevel: 'ADVANCED_OPTIMIZATIONS',
         loggingLevel: 'SEVERE',
         externs: [
-          "externs.js"
+          "utility-toolkit-externs.js"
         ],
         ignoreDefaultExterns: false,
         avoidGlobals: true
