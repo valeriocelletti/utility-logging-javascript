@@ -1,4 +1,4 @@
-# Weswit JavaScript Logging Toolkit #
+# Weswit JavaScript Logging Toolkit
 
 This library exposes a set of logger facilities that can be used to write a logging-library-agnostic code:
 using the LoggerManager class the code will be able to flush its log even if no logging library is available.
