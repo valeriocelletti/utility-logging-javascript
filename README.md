@@ -8,7 +8,7 @@ This library relies on the [Weswit JavaScript toolkit](https://github.com/weswit
 
 See http://blog.lightstreamer.com/2013/11/visual-layer-of-javascript-client.html to learn more.
 
-## Project Structure ##     
+## Project Structure   
 
 *    sources: Here you can find the source files
 *    build: This folder simply contains the app.build.js configuration to be used to build the library using the [r.js optimizer](https://github.com/jrburke/r.j) and a README.md with some instructions.
